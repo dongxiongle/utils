@@ -1,7 +1,25 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "download": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongxiongle/utils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dongxiongle/utils/issues"
+  },
+  "homepage": "https://github.com/dongxiongle/utils#readme",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@types/node": "^14.14.32"
+  },
+  "dependencies": {
+    "puppeteer": "^8.0.0"
   }
 }
