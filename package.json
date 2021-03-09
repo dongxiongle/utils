@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "download": "tsc"
+    "build": "tsc",
+    "download": "node dist/download/index.js",
+    "upload": "node dist/upload/index.js"
   },
   "repository": {
     "type": "git",
