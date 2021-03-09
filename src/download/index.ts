@@ -1,7 +1,6 @@
-const fs = require('fs');
-const Path = require('path');
-const Process = require('process');
-const puppeteer = require('puppeteer');
+import fs from 'fs';
+import Path from 'path';
+import puppeteer from 'puppeteer';
 const path = Path.resolve(__dirname, 'images');
 try {
   fs.mkdirSync(path);
@@ -13,7 +12,6 @@ const download = async (url: string) => {
   const page = await browser.newPage();
   page.setViewport({ width: 1280, height: 926 });
   let counter = 0;
-  let flag = 0;
   page.on('response', async (response: any) => {
     const list = response.url();
     const matches = /.*\/([^\/]*?)\.(jpg|png|svg|gif)$/.exec(list);
