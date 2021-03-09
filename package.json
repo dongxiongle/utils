@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc",
     "download": "node dist/download/index.js",
-    "upload": "node dist/upload/index.js"
+    "upload": "node dist/upload/index.js",
+    "xianzhi": "node dist/upload/index.js xianzhi dist/images",
+    "tobase": "node dist/imageTobase64/index.js"
   },
   "repository": {
     "type": "git",
