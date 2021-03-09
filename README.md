@@ -1,5 +1,13 @@
 ## utils
+```
+git clone https://github.com/dongxiongle/utils.git
+yarn install
+tsc
+```
 ### download web image
+```ts
+npm run download url
+```
 
 ### qiniu upload
 #### action.ts
@@ -16,6 +24,6 @@ const buckInfo = {
 export default buckInfo;
 ```
 #### 上传
-```
-node dist\upload\index.js test
+```ts
+npm run upload test dirPath
 ```
