@@ -2,8 +2,8 @@ import fs from 'fs';
 
 const fileUrl = process.argv[2];
 const imageToBase = (fileUrl: string) => {
-  const imageData = fs.readFileSync(fileUrl, 'base64');
-  return `data:image/png;base64,${imageData}`;
+  const imageData = fs.readFileSync(fileUrl);
+  const imageBase64 = imageData.toString('base64');
+  fs.writeFileSync('./url.txt', `data:image/png;base64,${imageBase64}`);
 };
-const base = imageToBase(fileUrl);
-console.log(base);
+imageToBase(fileUrl);
