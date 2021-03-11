@@ -2,9 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import qiniu from 'qiniu';
 import buckInfo from './action';
+import { Info } from './action';
 const { argv } = process;
-const { ak, sk, bucket, baseUrl } = buckInfo[argv[2]];
+const info: Info = buckInfo[argv[2]];
 const dirPath = argv[3];
+const { ak, sk, bucket, baseUrl, zone } = info;
 
 /**
  * 获取upload token
@@ -25,7 +27,7 @@ const getToken = (): string => {
  * @returns Promise
  */
 const upload = async (uploadToken: string, localFile: string, key: string): Promise<any> => {
-  const config = new qiniu.conf.Config({zone: qiniu.zone.Zone_z0});
+  const config = new qiniu.conf.Config({zone: qiniu.zone[zone]});
   const formUploader = new qiniu.form_up.FormUploader(config);
   const putExtra = new qiniu.form_up.PutExtra();
   return new Promise((resolve, reject) => {
